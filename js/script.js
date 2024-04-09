@@ -107,9 +107,9 @@ console.log(countRepeatedOccurenceOfWords("Ceci est une tarte aux pommes pleines
 
 console.info("5/ Implémentez une fonction qui retourne une valeur entière alétoire comprise entre 2 valeurs passées en paramètres.");
 
-function getRandomBetweenValues (min, max){
-    // return Math.floor(min + Math.random() * (max + 1 - min));
-    return parseInt(min + Math.floor(Math.random() * (max - min + 1)))
+function getRandomBetweenValues(min, max) {
+    return Math.floor(min + Math.random() * (max + 1 - min));
+    // return parseInt(min + Math.floor(Math.random() * (max - min + 1)))
 }
 
 console.log(getRandomBetweenValues(3.14, 42));
@@ -117,10 +117,57 @@ console.log(getRandomBetweenValues(-5, 7));
 
 /* ------------------------------------------------------*/
 
-// console.info("6/ Implémentez une fonction qui retourne une chaîne de caractère aléatoire composée de chiffres et de lettres en majuscule et minuscule, de la taille passée en paramètre.");
+console.info("6/ Implémentez une fonction qui retourne une chaîne de caractère aléatoire composée de chiffres et de lettres en majuscule et minuscule, de la taille passée en paramètre.");
 
-// console.log();
-// console.log();
+/**
+ * return a random value between 0 and a chosen number.
+ * @param {number} max - chosen number
+ * @returns {number} - random value
+ */
+function getRandomValue(max) {
+    return Math.floor(Math.random() * (max + 1));
+}
+
+
+/**
+ * Gets a random value from an array
+ * @param {array} array of datas 
+ * @returns {*} - a random value
+ */
+function getRandomArrayValue(array) {
+    return array[getRandomValue(array.length - 1)];
+
+}
+
+
+
+function genratePassword(n) {
+    let chars = [];
+    let password = "";
+    for (let i = 48; i <= 57; i++) {
+        chars.push(String.fromCharCode(i))
+
+    }
+    for (let i = 65; i <= 90; i++) {
+        chars.push(String.fromCharCode(i))
+
+    }
+    for (let i = 97; i <= 122; i++) {
+        chars.push(String.fromCharCode(i))
+
+    }
+
+    for (let j = 0; j < n; j++) {
+
+        password += getRandomArrayValue(chars)
+    }
+
+    return password;
+}
+console.log(genratePassword(5)
+);
+console.log(genratePassword(10)
+);
 
 /* ------------------------------------------------------*/
 
