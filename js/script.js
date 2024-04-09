@@ -81,22 +81,27 @@ console.info("4/ Implémentez une fonction qui prend en paramètre un texte et r
  * @returns {object} object listing all occurences of word
  */
 function countRepeatedOccurenceOfWords(txt) {
-    let words = {}
-    for (const word of txt.split(' ') ) {
+    let words = {};
+    for (const word of txt.split(' ')) {
         if (words[word] === undefined) {
             words[word] = 1;
-        }else {
-            words[word] += 1;
+        } else {
+            words[word]++;
         }
     }
     return words;
+}
 
-
-    
+function countRepeatedOccurenceOfWords2(txt) {
+    let words = {};
+    txt.match(/[\wÀ-ú]+/g).foreach(word => {
+        words[word] = (words[word] || 0) + 1;
+    });
+    return words;
 }
 
 console.log(countRepeatedOccurenceOfWords("Implémentez une fonction qui prend en paramètre un texte et retourne un objet comptant le nombre d'occurence de chaque mot"));
-console.log();
+console.log(countRepeatedOccurenceOfWords("Ceci est une tarte aux pommes pleines de pommes."));
 
 /* ------------------------------------------------------*/
 
