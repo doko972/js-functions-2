@@ -74,10 +74,29 @@ console.log(getMaxValue([258, "55", "JeanPaul", 65, "589"]));
 
 /* ------------------------------------------------------*/
 
-// console.info("4/ Implémentez une fonction qui prend en paramètre un texte et retourne un objet comptant le nombre d'occurence de chaque mot.");
+console.info("4/ Implémentez une fonction qui prend en paramètre un texte et retourne un objet comptant le nombre d'occurence de chaque mot.");
+/**
+ * get occurence of texte
+ * @param {string} txt the text you want the words occurences from
+ * @returns {object} object listing all occurences of word
+ */
+function countRepeatedOccurenceOfWords(txt) {
+    let words = {}
+    for (const word of txt.split(' ') ) {
+        if (words[word] === undefined) {
+            words[word] = 1;
+        }else {
+            words[word] += 1;
+        }
+    }
+    return words;
 
-// console.log();
-// console.log();
+
+    
+}
+
+console.log(countRepeatedOccurenceOfWords("Implémentez une fonction qui prend en paramètre un texte et retourne un objet comptant le nombre d'occurence de chaque mot"));
+console.log();
 
 /* ------------------------------------------------------*/
 
