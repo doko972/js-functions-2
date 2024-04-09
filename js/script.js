@@ -11,7 +11,7 @@ console.info("1/ Implémentez une fonction qui prend en paramètre les dimension
  * @param {number} b The side's length of a triangle
  * @returns {number} The hypotenuse.
  */
-function getHypotenuse (a, b) {
+function getHypotenuse(a, b) {
     // a**2 + b**2 = c**2;
     // c = Math.sqrt(a**2 + b**2);
     return Math.hypot(a, b)
@@ -22,15 +22,30 @@ console.log(getHypotenuse(2.75, 8));
 
 /* ------------------------------------------------------*/
 
-// console.info("2/ Implémentez une fonction qui retourne le nom et le prénom du plus âgé de 2 utilisateurs passés en paramètres parmi les 4 ci-dessous.");
+console.info("2/ Implémentez une fonction qui retourne le nom et le prénom du plus âgé de 2 utilisateurs passés en paramètres parmi les 4 ci-dessous.");
 
-// const user1 = {firstName: "Paul", lastName: "Rick", age: 35};
-// const user2 = {firstName: "Samir", lastName: "Ah", age: 22};
-// const user3 = {firstName: "Loanne", lastName: "Bourdin", age: 28};
-// const user4 = {firstName: "Abdel", lastName: "Dems", age: 44};
+const user1 = { firstName: "Paul", lastName: "Rick", age: 35 };
+const user2 = { firstName: "Samir", lastName: "Ah", age: 22 };
+const user3 = { firstName: "Loanne", lastName: "Bourdin", age: 28 };
+const user4 = { firstName: "Abdel", lastName: "Dems", age: 44 };
 
-// console.log();
-// console.log();
+/**
+ * Get firstname and lastname from oldest user.
+ * @param {object} user1 - user data in object.
+ * @param {object} user2 - user data in object.
+ * @returns {string} - Get firstname and lastname.
+ */
+function getOldestUser(user1, user2) {
+
+    const eldest = user1.age > user2.age ? user1 : user2;
+
+    return eldest.firstName + " " + eldest.lastName;
+}
+
+
+
+console.log(getOldestUser(user1, user2));
+console.log(getOldestUser(user3, user4));
 
 /* ------------------------------------------------------*/
 
