@@ -49,10 +49,22 @@ console.log(getOldestUser(user3, user4));
 
 /* ------------------------------------------------------*/
 
-// console.info("3/ Implémentez une fonction qui retourne la valeur la plus grande d'un tableau de nombres, quelqu'en soit la taille.");
+console.info("3/ Implémentez une fonction qui retourne la valeur la plus grande d'un tableau de nombres, quelqu'en soit la taille.");
+/**
+ * Get the max value from array
+ * @param {array} array  - the array
+ * @returns {number} - return max number
+ */
+function getMaxValue(array){
+    const arrayNumber = array.filter(function(value){
+        return typeof value === "number";
+    });
+    console.log(arrayNumber);
+    return Math.max(...arrayNumber);
+}
 
-// console.log();
-// console.log();
+console.log(getMaxValue([25, 55, 32, 65]));
+console.log(getMaxValue([258, "55", "JeanPaul", 65, 589]));
 
 /* ------------------------------------------------------*/
 
