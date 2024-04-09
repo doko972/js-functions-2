@@ -105,10 +105,15 @@ console.log(countRepeatedOccurenceOfWords("Ceci est une tarte aux pommes pleines
 
 /* ------------------------------------------------------*/
 
-// console.info("5/ Implémentez une fonction qui retourne une valeur entière alétoire comprise entre 2 valeurs passées en paramètres.");
+console.info("5/ Implémentez une fonction qui retourne une valeur entière alétoire comprise entre 2 valeurs passées en paramètres.");
 
-// console.log();
-// console.log();
+function getRandomBetweenValues (min, max){
+    // return Math.floor(min + Math.random() * (max + 1 - min));
+    return parseInt(min + Math.floor(Math.random() * (max - min + 1)))
+}
+
+console.log(getRandomBetweenValues(3.14, 42));
+console.log(getRandomBetweenValues(-5, 7));
 
 /* ------------------------------------------------------*/
 
