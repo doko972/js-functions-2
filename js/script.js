@@ -55,16 +55,22 @@ console.info("3/ Implémentez une fonction qui retourne la valeur la plus grande
  * @param {array} array  - the array
  * @returns {number} - return max number
  */
-function getMaxValue(array){
-    const arrayNumber = array.filter(function(value){
-        return typeof value === "number";
-    });
-    console.log(arrayNumber);
-    return Math.max(...arrayNumber);
+function getMaxValue(array) {
+    return Math.max(
+        ...array
+            .map(parseFloat)
+            .filter(v => typeof v === "number" && !isNaN(v))
+    );
 }
 
+// const arrayNumber = array.filter(function(value){
+//     return typeof value === "number";
+// });
+// console.log(arrayNumber);
+// return Math.max(...arrayNumber);
+
 console.log(getMaxValue([25, 55, 32, 65]));
-console.log(getMaxValue([258, "55", "JeanPaul", 65, 589]));
+console.log(getMaxValue([258, "55", "JeanPaul", 65, "589"]));
 
 /* ------------------------------------------------------*/
 
